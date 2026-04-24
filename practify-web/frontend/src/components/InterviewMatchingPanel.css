@@ -1,0 +1,273 @@
+/* Interview Matching Panel Styles */
+
+.interview-matching-panel {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.matching-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.matching-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.matching-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.matching-header svg {
+  flex-shrink: 0;
+}
+
+.matching-content {
+  padding: 2rem;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Idle State */
+.state-idle {
+  text-align: center;
+  width: 100%;
+}
+
+.state-idle p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  background: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #e0e0e0;
+}
+
+/* Searching State */
+.state-searching {
+  text-align: center;
+  width: 100%;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.rotating {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.state-searching p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.sub-text {
+  color: #999;
+  font-size: 0.9rem;
+  margin-top: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Matched State */
+.state-matched {
+  text-align: center;
+  width: 100%;
+}
+
+.success-icon {
+  color: #4caf50;
+  margin-bottom: 1rem;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.state-matched .message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4caf50;
+  margin: 1rem 0;
+}
+
+.partner-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  justify-content: center;
+}
+
+.partner-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #667eea;
+}
+
+.partner-details {
+  text-align: left;
+}
+
+.partner-details h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.exam-type {
+  margin: 0.25rem 0;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.level {
+  margin: 0.25rem 0;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.ready-text {
+  color: #4caf50;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Error State */
+.state-error {
+  text-align: center;
+  width: 100%;
+}
+
+.state-error svg {
+  color: #f44336;
+  margin-bottom: 1rem;
+}
+
+.state-error p {
+  color: #333;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.matching-status {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 1.5rem;
+  background: #f5f5f5;
+  border-top: 1px solid #eee;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .matching-card {
+    border-radius: 8px;
+  }
+
+  .matching-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .matching-content {
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+
+  .partner-info {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}
